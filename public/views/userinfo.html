@@ -1,0 +1,17 @@
+<div class="container" ng-controller="WelcomeController">
+    <div class="col-md-offset-2">
+        <div><p>{{name}}</p><p>{{race}}</p><p>{{power}}/{{toughness}}</p></div>
+            <input ng-model="name" type="text" ng-init="N/A" placeholder="Card Name/ Token">
+            <input ng-model="race" type="text" ng-init="N/A" placeholder="Race/ Class">
+        </div>
+    </div>
+</div>
+
+<div>
+    <button ng-click="power=power+1" ng-init="power=0" class="btn btn-info">power +</button>
+    <button ng-click="power=power-1" class="btn btn-info">power -</button>
+    <button ng-click="toughness=toughness+1" ng-init="toughness=0" class="btn btn-info">toughness +</button>
+    <button ng-click="toughness=toughness-1" class="btn btn-info">toughness -</button>
+</div>
+<button ng-click="create()" class="btn btn-info">Create Token</button>
+<div ng-model="creature"></div>

@@ -1,0 +1,37 @@
+<form>
+    <div class="container" ng-controller="tokenStats">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div>
+            <button ng-click=" "
+            <input ng-model="token.name" type="text" ng-init="N/A" placeholder="Card Name/ Token">
+            <input ng-model="token.class" type="text" ng-init="N/A" placeholder="Race/ Class">
+            <input ng-model="token.ability" type="text" ng-init="N/A" placeholder="ability">
+            <input ng-model="token.power" type="number" placeholder="0" class="number"> /
+            <input ng-model="token.toughness" type="number" placeholder="0" class="number">
+            <button ng-click="create(token)" class="btn-md btn-primary">Create Token</button>
+            </div>
+        </div>
+        <div class="well col-md-3 col-sm-4 col-xs-6" ng-repeat="token in stats">
+            <div class="col-md-6  col-sm-6 col-xs-6">
+                <div><h4>{{token.name}}</h4></div>
+                <div><p>{{token.class}}</p></div>
+                <div class="ability">{{token.ability}}</div>
+                <div>{{token.power}} / {{token.toughness}}</div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                <div class="xunits"><div class="numba">X {{unit}}</div>
+                    <div class="units">
+                        <button ng-click="unit= unit+1" ng-init="unit=1" class="btnUnit">+</button>
+                        <button ng-click="unit= unit-1; count(unit, token)" class="btnUnit">-</button>
+                    </div>
+                </div>
+                <div class="counters"><div class="powa">{{pow}}/{{tgh}}</div>
+                    <div class="count">
+                        <button ng-click="pow= pow+1; tgh= tgh+1" ng-init="pow=0; tgh=0" class="btnCounter">+1/+1</button>
+                        <button ng-click="pow= pow-1; tgh= tgh-1"  class="btnCounter">-1/-1</button>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</form>
